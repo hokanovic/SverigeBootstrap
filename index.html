@@ -42,17 +42,21 @@
                     );
                     $('[data-toggle="popover"]').popover('show');
                     $("#imgen").attr('data-original-title', "Information");
-                $("#imgen").attr('data-content',"");
+                    $("#imgen").attr('data-content',"");
                     break;
                 case "blekinge":
                     $("#imgen").attr('data-content',
                     `
                     Information om Blekinge
+                    Blekinge har mer text än de andra länen
+                    bla bla bla
+                    bla bla
+                    bla
                     `
                     );
                     $('[data-toggle="popover"]').popover('show');
                     $("#imgen").attr('data-original-title', "Information");
-                $("#imgen").attr('data-content',"");
+                    $("#imgen").attr('data-content',"");
                     break;
                 case "smaland":
                     $("#imgen").attr('data-content',
@@ -62,13 +66,7 @@
                     );
                     $('[data-toggle="popover"]').popover('show');
                     $("#imgen").attr('data-original-title', "Information");
-                $("#imgen").attr('data-content',"");
-                    break;
-                default:
-                $("#imgen").attr('data-original-title', "");
-                $("#imgen").attr('data-content',"");
-                    $('[data-toggle="popover"]').popover('hide');
-                    $('[data-toggle="popover"]').popover('hide');
+                    $("#imgen").attr('data-content',"");
                     break;
             }
         }
