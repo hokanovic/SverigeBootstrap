@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+    <script src="jquery-3.2.1.slim.min.js"></script>
+    <script src="jquery.rwdImageMaps.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+
+        let clickBtn = function (lan) {
+            switch (lan) {
+                case "skane":
+                    $(".Textruta").text(skanetext);
+                    break;
+                case "blekinge":
+                    $(".Textruta").text(blekingetext);
+                    break;
+                case "smaland":
+                    $(".Textruta").text(smalandtext);
+                    break;
+            }
+        }
+
+        $(document).ready(function (e) {
+
+            $('img[usemap]').rwdImageMaps();
+            $('area').on('click', function () {
+                event.preventDefault();
+                clickBtn($(this).attr('alt'));
+            });
+        });
+    </script>
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <div  class="text-center">
+        <img data-toggle="popover" data-content="Information om län" title="Skåne"  usemap="#image-map" src="svlantrans.png" alt="">
+        <map name="image-map">
+            <area target="" alt="skane" title="skane" href="" coords="679,4356,372,4040" shape="rect">
+            <area target="" alt="blekinge" title="blekinge" href="" coords="697,4025,946,4131" shape="rect">
+            <area target="" alt="smaland" title="smaland" href="" coords="1006,3999,552,3586" shape="rect">
+        </map>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+</body>
+
+</html>

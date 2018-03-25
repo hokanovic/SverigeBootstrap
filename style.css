@@ -1,0 +1,16 @@
+.jumbotron {
+    margin-bottom: 0px;
+    /* background-image: url(novartis-logo.svg); */
+    background-position: 0% 0%;
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+img {
+
+    height: 100vh;
+
+}
