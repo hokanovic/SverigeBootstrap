@@ -18,26 +18,67 @@
 
     <script>
 
-        let clickBtn = function (lan) {
+
+        let skane = 
+        `
+        Skåne är ett län i söder
+        `;
+    
+        let smaland = `
+        Småland ligger ovanför Skåne
+        `;
+        let blekinge = `
+        Blekinge är avlångt
+        `;
+
+        let clickBtn = function (lan, tit) {
+            $("#imgen").attr('data-original-title', tit)
             switch (lan) {
                 case "skane":
-                    $(".Textruta").text(skanetext);
+                    $("#imgen").attr('data-content',
+                    `
+                    Information om Skåne
+                    `
+                    );
+                    $('[data-toggle="popover"]').popover('show');
+                    $("#imgen").attr('data-original-title', "Information");
+                $("#imgen").attr('data-content',"");
                     break;
                 case "blekinge":
-                    $(".Textruta").text(blekingetext);
+                    $("#imgen").attr('data-content',
+                    `
+                    Information om Blekinge
+                    `
+                    );
+                    $('[data-toggle="popover"]').popover('show');
+                    $("#imgen").attr('data-original-title', "Information");
+                $("#imgen").attr('data-content',"");
                     break;
                 case "smaland":
-                    $(".Textruta").text(smalandtext);
+                    $("#imgen").attr('data-content',
+                    `
+                    Information om Småland
+                    `
+                    );
+                    $('[data-toggle="popover"]').popover('show');
+                    $("#imgen").attr('data-original-title', "Information");
+                $("#imgen").attr('data-content',"");
+                    break;
+                default:
+                $("#imgen").attr('data-original-title', "");
+                $("#imgen").attr('data-content',"");
+                    $('[data-toggle="popover"]').popover('hide');
+                    $('[data-toggle="popover"]').popover('hide');
                     break;
             }
         }
 
         $(document).ready(function (e) {
-
+            $('[data-toggle="popover"]').popover();
             $('img[usemap]').rwdImageMaps();
             $('area').on('click', function () {
                 event.preventDefault();
-                clickBtn($(this).attr('alt'));
+                clickBtn($(this).attr('alt'), $(this).attr('title'));
             });
         });
     </script>
@@ -46,13 +87,13 @@
 </head>
 
 <body>
-
-    <div  class="text-center">
-        <img data-toggle="popover" data-content="Information om län" title="Skåne"  usemap="#image-map" src="svlantrans.png" alt="">
+    <div class="text-center">
+        <img id="imgen" data-toggle="popover" data-content="Klicka på något av länen för att få information" title="Information" usemap="#image-map" src="svlantrans.png"
+            alt="">
         <map name="image-map">
-            <area target="" alt="skane" title="skane" href="" coords="679,4356,372,4040" shape="rect">
-            <area target="" alt="blekinge" title="blekinge" href="" coords="697,4025,946,4131" shape="rect">
-            <area target="" alt="smaland" title="smaland" href="" coords="1006,3999,552,3586" shape="rect">
+            <area target="" title="Skåne" alt="skane" href="" coords="679,4356,372,4040" shape="rect">
+            <area target="" title="Blekinge" alt="blekinge" href="" coords="697,4025,946,4131" shape="rect">
+            <area target="" title="Småland" alt="smaland" href="" coords="1006,3999,552,3586" shape="rect">
         </map>
     </div>
     <!-- Optional JavaScript -->
